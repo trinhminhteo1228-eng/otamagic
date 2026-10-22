@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magics App - Trịnh Minh Quang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f8fafc;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .main-card {
+            background: rgba(18, 18, 23, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 420px;
+            border-radius: 28px;
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.15);
+            margin: 0 auto 16px auto;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #4ade80;
+            margin-bottom: 24px;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #4ade80;
+        }
+        .author-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-bottom: 24px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .info-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        .info-label {
+            font-size: 10px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .info-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+        .btn-install {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
+            transition: all 0.2s ease;
+            text-decoration: none;
+            margin-bottom: 12px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-install:active {
+            transform: scale(0.98);
+        }
+        .btn-download {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f1f5f9;
+            width: 100%;
+            padding: 14px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+        .accordion {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        footer span {
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+    <div class="main-card">
+        <!-- Trạng thái OTA -->
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            HỆ THỐNG OTA SẴN SÀNG
+        </div>
+
+        <!-- App Icon -->
+        <img src="https://i.postimg.cc/zf3gp8qV/avt-magic.jpg" alt="Magics App Icon" class="app-icon">
+
+        <!-- Tên App -->
+        <h1 style="font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px;">MAGICS APP</h1>
+
+        <!-- Tác giả -->
+        <div class="author-box">
+            <span>Chính chủ:</span>
+            <span style="font-weight: 700; color: #fff;">TRỊNH MINH QUANG</span>
+            <i class="fa-solid fa-circle-check" style="color: #3b82f6; font-size: 11px;"></i>
+        </div>
+
+        <!-- Thông số app -->
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Phiên bản</div>
+                <div class="info-value">v1.0.0</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Dung lượng</div>
+                <div class="info-value">~15 MB</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Yêu cầu</div>
+                <div class="info-value">iOS 14.0+</div>
+            </div>
+        </div>
+
+        <!-- Nút Cài đặt OTA trực tiếp (Nhớ thay Tên-Tài-Khoản và Tên-Repo của ông vào đây) -->
+        <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/Tên-Tài-Khoản-GitHub/Tên-Repo/main/manifest.plist" class="btn-install">
+            <i class="fa-brands fa-apple" style="font-size: 18px;"></i>
+            CÀI ĐẶT TRỰC TIẾP TRÊN IPHONE
+        </a>
+
+        <!-- Nút Tải IPA dự phòng -->
+        <a href="MagicApp.ipa" download class="btn-download">
+            <i class="fa-solid fa-file-arrow-down" style="color: #38bdf8;"></i>
+            TẢI FILE .IPA MIỄN PHÍ
+        </a>
+
+        <!-- Hướng dẫn -->
+        <div class="accordion">
+            <span style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i> Hướng dẫn cài đặt & Sửa lỗi
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Bản quyền thuộc về <span>TRỊNH MINH QUANG</span><br>
+        Phân phối chính thức qua hệ thống GitHub Pages OTA
+    </footer>
+
+</body>
+</html>
