@@ -47,15 +47,15 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: #38bdf8;
+            color: #4ade80;
             margin-bottom: 24px;
         }
         .status-dot {
             width: 8px;
             height: 8px;
-            background-color: #38bdf8;
+            background-color: #4ade80;
             border-radius: 50%;
-            box-shadow: 0 0 10px #38bdf8;
+            box-shadow: 0 0 10px #4ade80;
         }
         .author-box {
             display: inline-flex;
@@ -116,6 +116,26 @@
         .btn-install:active {
             transform: scale(0.98);
         }
+        .btn-download {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f1f5f9;
+            width: 100%;
+            padding: 14px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+        .btn-download:active {
+            transform: scale(0.98);
+        }
         .accordion {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -146,10 +166,10 @@
     <div></div>
 
     <div class="main-card">
-        <!-- Trạng thái -->
+        <!-- Trạng thái OTA -->
         <div class="status-badge">
             <div class="status-dot"></div>
-            LINK TẢI TRỰC TIẾP SẴN SÀNG
+            HỆ THỐNG OTA SẴN SÀNG
         </div>
 
         <!-- App Icon -->
@@ -181,16 +201,22 @@
             </div>
         </div>
 
-        <!-- Nút Tải IPA trực tiếp cực nhanh không bao giờ lỗi -->
-        <a href="https://drive.google.com/uc?export=download&id=14KthAVZlG6CODrzWPrpI_XtV9LInuFCf" download class="btn-install">
-            <i class="fa-solid fa-cloud-arrow-down" style="font-size: 18px;"></i>
-            TẢI FILE .IPA VỀ MÁY
+        <!-- Nút Cài đặt OTA trực tiếp chính thức -->
+        <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/trinhminhteo1228-eng/otamagic/main/manifest.plist" class="btn-install">
+            <i class="fa-brands fa-apple" style="font-size: 18px;"></i>
+            CÀI ĐẶT TRỰC TIẾP TRÊN IPHONE
+        </a>
+
+        <!-- Nút Tải IPA dự phòng -->
+        <a href="MagicApp.ipa" download class="btn-download">
+            <i class="fa-solid fa-file-arrow-down" style="color: #38bdf8;"></i>
+            TẢI FILE .IPA MIỄN PHÍ
         </a>
 
         <!-- Hướng dẫn -->
         <div class="accordion">
             <span style="display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i> Mở bằng ESign để cài đặt
+                <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i> Hướng dẫn cài đặt & Sửa lỗi
             </span>
             <i class="fa-solid fa-chevron-down"></i>
         </div>
@@ -199,7 +225,7 @@
     <!-- Footer -->
     <footer>
         © 2026 Bản quyền thuộc về <span>TRỊNH MINH QUANG</span><br>
-        Phân phối chính thức qua GitHub Pages
+        Phân phối chính thức qua hệ thống GitHub Pages OTA
     </footer>
 
 </body>
